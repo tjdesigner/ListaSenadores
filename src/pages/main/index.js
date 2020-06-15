@@ -12,8 +12,8 @@ const Main = () => {
   const getListData = async () => {
     try {
       const response = await api.get('/lista/atual.json')
-      setSenadores(response.data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar.map(cod =>
-        cod=cod.IdentificacaoParlamentar));
+      setSenadores(response.data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar.map(ident =>
+        ident=ident.IdentificacaoParlamentar));
       setCodParlamentar(response.data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar.map(cod =>
         cod=cod.IdentificacaoParlamentar.CodigoParlamentar
       ));
@@ -35,7 +35,7 @@ const Main = () => {
   }, [])
 
   return (
-    <div>
+    <div className="app">
       {
       senadores !== [''] ? (
         <BootstrapTable
@@ -43,6 +43,7 @@ const Main = () => {
         data={senadores}
         columns={columns}
         pagination={paginationFactory()}
+        bootstrap4
       />
       ) : (
         <h1>Tiago</h1>
