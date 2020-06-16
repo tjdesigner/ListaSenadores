@@ -1,0 +1,43 @@
+div.react-bootstrap-table {
+  margin: 20px 0;
+}
+
+table {
+  background: #333;
+}
+
+table > thead {
+  background: green;
+  color: white;
+}
+
+table > tbody {
+  background: #ececec;
+}
+
+table > tbody > tr {
+  line-height: 30px;
+}
+
+table > tbody > tr > td {
+  font-size: 18px;
+  color: #333a41;
+  font-weight: 500;
+}
+
+div.row.react-bootstrap-table-pagination > div {
+  margin: 10px 0;
+}
+
+div.react-bootstrap-table-pagination-list > ul > li {
+
+}
+
+div.react-bootstrap-table-pagination-list > ul > li.page-item > a {
+  color: green;
+}
+
+div.react-bootstrap-table-pagination-list > ul > li.active.page-item > a {
+  background: green;
+  border: solid 1px green
+}

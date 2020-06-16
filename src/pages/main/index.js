@@ -3,6 +3,8 @@ import api from "../../services/api";
 //import { Container, Row, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import BootstrapTable from "react-bootstrap-table-next";
+import NavbarComponent from './../../components/Navbar';
+import "./styles.css";
 
 const Main = () => {
 
@@ -25,9 +27,10 @@ const Main = () => {
   
 
   const columns = [
-    {dataField: "NomeParlamentar", text: "Nome do Parlamentar"},
+    {dataField: "NomeCompletoParlamentar", text: "Nome do Parlamentar"},
     {dataField: "CodigoParlamentar", text: "Código do Parlamentar"},
     {dataField: "SiglaPartidoParlamentar", text: "Partido"},
+    {dataField: "UfParlamentar", text: "UF do Parlamentar"},
   ]
   
   useEffect(() => {
@@ -35,7 +38,10 @@ const Main = () => {
   }, [])
 
   return (
-    <div className="app">
+    <>
+    <NavbarComponent/>
+    <div className="container">
+
       {
       senadores !== [''] ? (
         <BootstrapTable
@@ -50,6 +56,7 @@ const Main = () => {
       )
     }
     </div>
+    </>
   )
 }
 
